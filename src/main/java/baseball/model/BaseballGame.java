@@ -3,12 +3,20 @@ package baseball.model;
 import java.util.List;
 
 public class BaseballGame {
-    private Baseball baseball;
+    private List<Integer> computerNumbers;
     private Referee referee;
-    private void resetBaseballs() {
-        baseball = BaseballFactory.createComputerBaseball();
+
+    public BaseballGame() {
+        referee = new Referee();
     }
 
+    private void resetComputerNumbers() {
+        computerNumbers = createComputerBaseball();
+    }
 
+    public List<Integer> createComputerBaseball() {
+        return new RandomNumberGenerator().generateRandomNumbers(BaseballStatistic.SIZE.getValue(),
+                        BaseballStatistic.LOWER_BOUND.getValue(), BaseballStatistic.UPPER_BOUND.getValue());
+    }
 
 }
