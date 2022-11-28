@@ -8,6 +8,6 @@ public class OutputView {
     }
 
     public void printResult(Result result) {
-        System.out.print(result.toString());
+        System.out.println(result.toString());
     }
 }

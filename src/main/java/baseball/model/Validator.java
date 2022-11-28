@@ -10,6 +10,12 @@ public class Validator {
         validateRange(input);
     }
 
+    public static void validateRestartInput(String input) {
+        if (!input.equals(RestartMessage.RESTART.getMessage()) && !input.equals(RestartMessage.END.getMessage())) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     public static void validateNumeric(String input) {
         if (input == null || input.isEmpty() || !Pattern.matches(NUMERIC_PATTERN, input)) {
             throw new IllegalArgumentException();

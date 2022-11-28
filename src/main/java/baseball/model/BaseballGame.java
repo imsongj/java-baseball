@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BaseballGame {
     private List<Integer> computerNumbers;
-    private Referee referee;
+    private final Referee referee;
 
     public BaseballGame() {
         referee = new Referee();
@@ -29,5 +29,9 @@ public class BaseballGame {
         return input.chars()
                 .map(Character::getNumericValue)
                 .collect(ArrayList::new, List::add, List::addAll);
+    }
+
+    public boolean restart(String input) {
+        return input.equals(RestartMessage.RESTART.getMessage());
     }
 }
