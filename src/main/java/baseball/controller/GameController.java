@@ -35,6 +35,7 @@ public class GameController {
                 break;
             }
             result = baseballGame.guess(input);
+            outputView.printResult(result);
         } while(!result.isStrikeOut());
     }
 
