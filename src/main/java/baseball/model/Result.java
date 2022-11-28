@@ -16,4 +16,8 @@ public class Result {
     public int getStrikes() {
         return strikes;
     }
+
+    public boolean isStrikeOut() {
+        return strikes == BaseballStatistic.STRIKE_OUT.getValue();
+    }
 }

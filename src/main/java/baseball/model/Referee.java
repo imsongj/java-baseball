@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Referee {
-    //두 숫자 비교, 스트라이크 볼 개수 반환
     public Result compare(List<Integer> computerBaseball, List<Integer> playerBaseball) {
         return new Result(
                 countBalls(computerBaseball, playerBaseball),
@@ -14,7 +13,7 @@ public class Referee {
 
     public int countStrikes(List<Integer> computerBaseball, List<Integer> playerBaseball) {
         int strikes = 0;
-        for (int index = 0; index < BaseballStatistic.SIZE.getValue(); index++) {
+        for (int index = 0; index < BaseballStatistic.NUMBERS_SIZE.getValue(); index++) {
             if (computerBaseball.get(index).equals(playerBaseball.get(index))) {
                 strikes++;
             }
